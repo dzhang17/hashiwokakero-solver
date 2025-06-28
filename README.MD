@@ -92,7 +92,6 @@ pip install -r requirements.txt
      ```bash
      python -m amplpy.modules activate [your-license-key]
      ```
-   * For academic users, you can get a free license from [AMPL for Students](https://ampl.com/products/ampl/ampl-for-students/)
    * For evaluation, AMPL provides a size-limited demo version
 
    Note: The ILP solver requires AMPL to be properly activated. Without activation, you can still use the LNS solver.
@@ -234,44 +233,7 @@ results_df = run_complete_benchmark()
 generate_all_figures(results_df)
 ```
 
-## 🤝 Contributing
-
-We welcome contributions! Please feel free to submit issues, fork the repository and create pull requests.
-
-### Development Setup
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Run tests: `pytest tests/`
-4. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-5. Push to the branch (`git push origin feature/AmazingFeature`)
-6. Open a Pull Request
-
-### Code Style
-
-* Follow PEP 8 guidelines
-* Add type hints for function parameters and returns
-* Include docstrings for all classes and functions
-* Write unit tests for new features
-
-## 📝 Citation
-
-If you use this code in your research, please cite:
-
-```bibtex
-@software{hashiwokakero_solver,
-  author = {Your Name},
-  title = {Hashiwokakero Solver: ILP and LNS Approaches},
-  year = {2024},
-  url = {https://github.com/yourusername/hashiwokakero_solver}
-}
-```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](https://claude.ai/chat/LICENSE) file for details.
-
-## 🙏 Acknowledgments
+```## 🙏 Acknowledgments
 
 * Puzzle instances adapted from various Hashiwokakero collections
 * ILP formulation inspired by constraint programming literature
@@ -288,10 +250,6 @@ This project is licensed under the MIT License - see the [LICENSE](https://claud
 ## 📧 Contact
 
 For questions or collaboration opportunities, please open an issue or contact [your-email@example.com].
-
----
-
-Made with ❤️ for puzzle enthusiasts and optimization researchers
 
 # Hashiwokakero Solver
 
@@ -353,7 +311,6 @@ python visualize_solver.py dataset/400/Hs_34_400_75_15_020.has --solver both
 # Set custom time limit and save images
 python visualize_solver.py dataset/300/Hs_29_300_50_10_015.has --time-limit 600 --save
 ```
-
 #### Command Line Options
 
 * `puzzle_file`: Path to the puzzle file (.has format)
@@ -377,7 +334,6 @@ python visualize_solver.py dataset/200/Hs_24_200_50_05_010.has --solver both --s
 # Clean visualization without grid lines
 python visualize_solver.py dataset/300/Hs_29_300_25_00_015.has --no-grid --save
 ```
-
 ### Running Benchmarks
 
 To run performance benchmarks on the dataset:
@@ -389,7 +345,6 @@ python benchmark_script.py
 # Run specific experiment
 python -m experiment_framework.main --experiment algorithm_comparison
 ```
-
 ### Generating Puzzles
 
 To generate new Hashiwokakero puzzles:
@@ -401,7 +356,6 @@ python scripts/generate_puzzles.py
 # Generate with specific parameters
 python scripts/generate_puzzles.py --size 20x20 --islands 50 --difficulty hard
 ```
-
 ## Dataset Structure
 
 The dataset is organized by puzzle size:
@@ -413,7 +367,6 @@ dataset/
 ├── 300/  # Puzzles with ~300 islands
 └── 400/  # Puzzles with ~400 islands
 ```
-
 Each puzzle file follows the naming convention: `Hs_[grid_size]_[islands]_[density]_[param]_[id].has`
 
 ## Visualization Features
@@ -468,7 +421,6 @@ hashiwokakero_solver/
 ├── visualize_solver.py # Main visualization script
 └── requirements.txt    # Python dependencies
 ```
-
 ## Contributing
 
 Contributions are welcome! Please ensure:
@@ -478,23 +430,11 @@ Contributions are welcome! Please ensure:
 * New features include appropriate documentation
 * Performance benchmarks are maintained
 
-## License
+```## Acknowledgments
 
-[Your License Here]
-
-## Citation
-
-If you use this solver in your research, please cite:
-
-```
-[Your Citation Format Here]
-```
-
-## Acknowledgments
-
-* Dataset from [source]
+* Dataset from [PhoenixSmaug](https://github.com/PhoenixSmaug/hashi/commits?author=PhoenixSmaug)
 * AMPL and CBC solver teams
-* Contributors and testers
+* Prof. Mitchell offering me this chance
 
 A professional-grade solver for Hashiwokakero (Bridges) puzzles using multiple algorithms.
 
@@ -513,6 +453,7 @@ A professional-grade solver for Hashiwokakero (Bridges) puzzles using multiple a
 3. Activate environment: `menv\Scripts\activate` (Windows) or `source menv/bin/activate` (Linux/Mac)
 4. Install dependencies: `pip install -r requirements.txt`
 5. Install AMPL solvers: `python -m amplpy.modules install cbc highs`
+6. activate using `python -m amplpy.modules activate [your ampl license key]`
 
 ## Usage
 
