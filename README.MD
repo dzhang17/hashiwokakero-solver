@@ -1,7 +1,5 @@
 # Hashiwokakero Solver
 
-# Hashiwokakero Solver
-
 A comprehensive implementation of Integer Linear Programming (ILP) and Large Neighborhood Search (LNS) algorithms for solving Hashiwokakero (Bridges) puzzles. This project includes state-of-the-art optimization techniques, visualization tools, and extensive benchmarking capabilities.
 
 ![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)![License](https://img.shields.io/badge/license-MIT-green.svg)![Status](https://img.shields.io/badge/status-active-success.svg)
