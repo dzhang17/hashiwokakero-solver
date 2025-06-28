@@ -1,0 +1,89 @@
+# config/experiment_config.yaml
+dataset_paths:
+  100: "dataset/100"
+  200: "dataset/200"
+  300: "dataset/300"
+  400: "dataset/400"
+
+dataset_analysis:
+  enabled: true
+
+experiments:
+  feasibility:
+    enabled: true
+    sizes: [100]
+    instances_per_size: 10
+    time_limit: 60
+    
+  scalability:
+    enabled: true
+    sizes: [100, 200, 300, 400]
+    instances_per_size: [30, 20, 10, 5]
+    time_limits: [60, 180, 300, 600]
+    
+  algorithm_comparison:
+    enabled: true
+    sizes: [100]
+    instances: "all"  # or specific number
+    time_limit: 120
+    
+  parameter_sensitivity:
+    enabled: true
+    sizes: [100]
+    instances_per_size: 20
+    base_time_limit: 60
+    parameters:
+      lns:
+        destroy_rate: [0.1, 0.2, 0.3, 0.4, 0.5]
+        cooling_rate: [0.9, 0.95, 0.99]
+        repair_time_limit: [1, 3, 5]
+      ilp:
+        presolve: [true, false]
+        cuts: [0, 1, 2]
+        
+  difficulty_analysis:
+    enabled: true
+    sizes: [100, 200]
+    instances_per_group: 10
+    time_limit: 120
+    groups:
+      - name: "low_density"
+        density: 25
+      - name: "medium_density"
+        density: 50
+      - name: "high_density"
+        density: 75
+      - name: "no_obstacles"
+        obstacles: 0
+      - name: "many_obstacles"
+        obstacles: 15
+
+solvers:
+  ilp_basic:
+    class: "ILPSolver"
+    config:
+      use_preprocessing: false
+      use_lazy_constraints: false
+      solver_name: "cbc"
+      
+  ilp_optimized:
+    class: "ILPSolver"
+    config:
+      use_preprocessing: true
+      use_lazy_constraints: true
+      solver_name: "cbc"
+      
+  lns_default:
+    class: "LNSSolver"
+    config:
+      initial_destroy_rate: 0.3
+      adaptive_destroy: false
+      use_parallel_repair: false
+      
+  lns_tuned:
+    class: "LNSSolver"
+    config:
+      initial_destroy_rate: 0.2
+      adaptive_destroy: true
+      use_parallel_repair: true
+      max_repair_threads: 3

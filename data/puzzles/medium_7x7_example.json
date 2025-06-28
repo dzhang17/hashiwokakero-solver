@@ -1,0 +1,62 @@
+{
+    "width": 7,
+    "height": 7,
+    "islands": [
+        {
+            "row": 0,
+            "col": 0,
+            "required_bridges": 3
+        },
+        {
+            "row": 0,
+            "col": 3,
+            "required_bridges": 5
+        },
+        {
+            "row": 0,
+            "col": 6,
+            "required_bridges": 2
+        },
+        {
+            "row": 2,
+            "col": 1,
+            "required_bridges": 4
+        },
+        {
+            "row": 2,
+            "col": 5,
+            "required_bridges": 3
+        },
+        {
+            "row": 3,
+            "col": 3,
+            "required_bridges": 8
+        },
+        {
+            "row": 4,
+            "col": 0,
+            "required_bridges": 2
+        },
+        {
+            "row": 4,
+            "col": 6,
+            "required_bridges": 3
+        },
+        {
+            "row": 6,
+            "col": 2,
+            "required_bridges": 4
+        },
+        {
+            "row": 6,
+            "col": 4,
+            "required_bridges": 5
+        },
+        {
+            "row": 6,
+            "col": 6,
+            "required_bridges": 1
+        }
+    ],
+    "bridges": []
+}

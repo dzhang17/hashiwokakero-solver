@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+menv/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+*.log
+*.xlsx
+~$*.xlsx
+thesis_figures/
+results/
+benchmark_results*/
+test_visualizations/
+*.png
+!dataset_characteristics.png
+!feature_correlation.png
+
+# AMPL
+*.nl
+*.sol
+
+# Jupyter
+.ipynb_checkpoints/
+
+# pytest
+.pytest_cache/
+.coverage

@@ -1,0 +1,112 @@
+{
+    "width": 10,
+    "height": 10,
+    "islands": [
+        {
+            "row": 0,
+            "col": 0,
+            "required_bridges": 4
+        },
+        {
+            "row": 0,
+            "col": 3,
+            "required_bridges": 6
+        },
+        {
+            "row": 0,
+            "col": 6,
+            "required_bridges": 4
+        },
+        {
+            "row": 0,
+            "col": 9,
+            "required_bridges": 2
+        },
+        {
+            "row": 2,
+            "col": 1,
+            "required_bridges": 5
+        },
+        {
+            "row": 2,
+            "col": 4,
+            "required_bridges": 7
+        },
+        {
+            "row": 2,
+            "col": 7,
+            "required_bridges": 4
+        },
+        {
+            "row": 3,
+            "col": 9,
+            "required_bridges": 3
+        },
+        {
+            "row": 4,
+            "col": 0,
+            "required_bridges": 3
+        },
+        {
+            "row": 4,
+            "col": 2,
+            "required_bridges": 6
+        },
+        {
+            "row": 4,
+            "col": 5,
+            "required_bridges": 8
+        },
+        {
+            "row": 4,
+            "col": 8,
+            "required_bridges": 5
+        },
+        {
+            "row": 6,
+            "col": 1,
+            "required_bridges": 4
+        },
+        {
+            "row": 6,
+            "col": 4,
+            "required_bridges": 6
+        },
+        {
+            "row": 6,
+            "col": 7,
+            "required_bridges": 5
+        },
+        {
+            "row": 7,
+            "col": 9,
+            "required_bridges": 2
+        },
+        {
+            "row": 8,
+            "col": 0,
+            "required_bridges": 2
+        },
+        {
+            "row": 8,
+            "col": 3,
+            "required_bridges": 5
+        },
+        {
+            "row": 8,
+            "col": 6,
+            "required_bridges": 4
+        },
+        {
+            "row": 9,
+            "col": 8,
+            "required_bridges": 3
+        },
+        {
+            "row": 9,
+            "col": 9,
+            "required_bridges": 1
+        }
+    ],
+    "bridges": []
+}

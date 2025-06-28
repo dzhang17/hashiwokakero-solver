@@ -1,0 +1,91 @@
+results_dir: results
+dataset_paths:
+  100: dataset/100
+  200: dataset/200
+  300: dataset/300
+  400: dataset/400
+experiments:
+  feasibility_study:
+    enabled: true
+    dataset_paths:
+      100: dataset/100
+      200: dataset/200
+      300: dataset/300
+      400: dataset/400
+    instances_per_size: 5
+    timeout: 300
+    sizes:
+    - 100
+    - 200
+  scalability_test:
+    enabled: true
+    dataset_paths:
+      100: dataset/100
+      200: dataset/200
+      300: dataset/300
+      400: dataset/400
+    sizes:
+    - 100
+    - 200
+    - 300
+    - 400
+    instances_per_size: 5
+    timeout: 600
+  algorithm_comparison:
+    enabled: true
+    dataset_paths:
+      100: dataset/100
+      200: dataset/200
+      300: dataset/300
+      400: dataset/400
+    sizes:
+    - 100
+    instances_per_size: 10
+    algorithms:
+    - ilp
+    - lns
+    timeout: 300
+  parameter_sensitivity:
+    enabled: true
+    dataset_paths:
+      100: dataset/100
+      200: dataset/200
+      300: dataset/300
+      400: dataset/400
+    sizes:
+    - 100
+    instances_per_size: 5
+    parameters:
+      destroy_ratio:
+      - 0.1
+      - 0.2
+      - 0.3
+      - 0.4
+      - 0.5
+      temperature:
+      - 0.5
+      - 1.0
+      - 2.0
+      - 5.0
+      - 10.0
+    timeout: 300
+  difficulty_analysis:
+    enabled: true
+    dataset_paths:
+      100: dataset/100
+      200: dataset/200
+      300: dataset/300
+      400: dataset/400
+    sizes:
+    - 100
+    instances_per_group: 5
+    difficulty_groups:
+      low_density:
+        density: 25
+      high_density:
+        density: 75
+      no_obstacles:
+        obstacles: 0
+      with_obstacles:
+        obstacles: 15
+    timeout: 300

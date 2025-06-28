@@ -1,0 +1,190 @@
+# config/solver_configs.yaml
+# Detailed solver configurations for experiments
+
+# ILP Solver Configurations
+ilp_solvers:
+  ilp_basic:
+    class: "ILPSolver"
+    description: "Basic ILP without optimizations"
+    config:
+      solver_name: "cbc"
+      use_preprocessing: false
+      use_lazy_constraints: false
+      presolve: true
+      solver_options:
+        cuts: 0
+        heuristics: 0
+        
+  ilp_preprocessing:
+    class: "ILPSolver"
+    description: "ILP with preprocessing only"
+    config:
+      solver_name: "cbc"
+      use_preprocessing: true
+      use_lazy_constraints: false
+      presolve: true
+      solver_options:
+        cuts: 1
+        heuristics: 1
+        
+  ilp_lazy:
+    class: "ILPSolver"
+    description: "ILP with lazy constraints only"
+    config:
+      solver_name: "cbc"
+      use_preprocessing: false
+      use_lazy_constraints: true
+      presolve: true
+      solver_options:
+        cuts: 2
+        heuristics: 1
+        
+  ilp_full:
+    class: "ILPSolver"
+    description: "ILP with all optimizations"
+    config:
+      solver_name: "cbc"
+      use_preprocessing: true
+      use_lazy_constraints: true
+      presolve: true
+      solver_options:
+        cuts: 2
+        heuristics: 2
+
+# LNS Solver Configurations
+lns_solvers:
+  lns_basic:
+    class: "LNSSolver"
+    description: "Basic LNS without enhancements"
+    config:
+      initial_destroy_rate: 0.3
+      min_destroy_rate: 0.1
+      max_destroy_rate: 0.6
+      adaptive_destroy: false
+      use_parallel_repair: false
+      use_smart_destroy: false
+      repair_time_limit: 5.0
+      accept_worse_solutions: true
+      initial_temperature: 10.0
+      cooling_rate: 0.95
+      
+  lns_adaptive:
+    class: "LNSSolver"
+    description: "LNS with adaptive destroy rate"
+    config:
+      initial_destroy_rate: 0.2
+      min_destroy_rate: 0.05
+      max_destroy_rate: 0.7
+      destroy_rate_increase: 1.1
+      destroy_rate_decrease: 0.95
+      adaptive_destroy: true
+      use_parallel_repair: false
+      use_smart_destroy: true
+      repair_time_limit: 5.0
+      accept_worse_solutions: true
+      initial_temperature: 10.0
+      cooling_rate: 0.95
+      
+  lns_parallel:
+    class: "LNSSolver"
+    description: "LNS with parallel repair strategies"
+    config:
+      initial_destroy_rate: 0.3
+      adaptive_destroy: false
+      use_parallel_repair: true
+      max_repair_threads: 3
+      use_smart_destroy: false
+      repair_time_limit: 3.0
+      accept_worse_solutions: true
+      initial_temperature: 10.0
+      cooling_rate: 0.95
+      
+  lns_aggressive:
+    class: "LNSSolver"
+    description: "Aggressive LNS with large neighborhoods"
+    config:
+      initial_destroy_rate: 0.5
+      min_destroy_rate: 0.3
+      max_destroy_rate: 0.8
+      adaptive_destroy: true
+      use_parallel_repair: true
+      max_repair_threads: 4
+      use_smart_destroy: true
+      repair_time_limit: 10.0
+      accept_worse_solutions: true
+      initial_temperature: 20.0
+      cooling_rate: 0.98
+      max_iterations_without_improvement: 50
+      
+  lns_conservative:
+    class: "LNSSolver"
+    description: "Conservative LNS with small neighborhoods"
+    config:
+      initial_destroy_rate: 0.1
+      min_destroy_rate: 0.05
+      max_destroy_rate: 0.3
+      adaptive_destroy: true
+      use_parallel_repair: false
+      use_smart_destroy: true
+      repair_time_limit: 2.0
+      accept_worse_solutions: false
+      initial_temperature: 5.0
+      cooling_rate: 0.9
+      max_iterations_without_improvement: 200
+
+# Hybrid Configurations (if needed)
+hybrid_solvers:
+  ilp_then_lns:
+    class: "HybridSolver"
+    description: "ILP for initial solution, LNS for improvement"
+    config:
+      initial_solver: "ilp_preprocessing"
+      improvement_solver: "lns_adaptive"
+      initial_time_fraction: 0.3
+      
+# Solver selection for different experiments
+experiment_solvers:
+  # For feasibility study - test basic versions
+  feasibility:
+    - ilp_basic
+    - ilp_full
+    - lns_basic
+    - lns_adaptive
+    
+  # For scalability - use best configurations
+  scalability:
+    - ilp_full
+    - lns_aggressive
+    
+  # For comparison - test all variants
+  comparison:
+    ilp:
+      - ilp_basic
+      - ilp_preprocessing
+      - ilp_lazy
+      - ilp_full
+    lns:
+      - lns_basic
+      - lns_adaptive
+      - lns_parallel
+      - lns_aggressive
+      - lns_conservative
+      
+  # For parameter sensitivity
+  parameter_base:
+    ilp: ilp_preprocessing
+    lns: lns_basic
+
+# Time limits by problem size
+time_limits:
+  100: 60      # 1 minute
+  200: 180     # 3 minutes
+  300: 300     # 5 minutes
+  400: 600     # 10 minutes
+  
+# Memory limits (MB)
+memory_limits:
+  100: 1024    # 1 GB
+  200: 2048    # 2 GB
+  300: 4096    # 4 GB
+  400: 8192    # 8 GB
