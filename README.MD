@@ -233,7 +233,7 @@ results_df = run_complete_benchmark()
 generate_all_figures(results_df)
 ```
 
-```## 🙏 Acknowledgments
+## 🙏 Acknowledgments
 
 * Puzzle instances adapted from various Hashiwokakero collections
 * ILP formulation inspired by constraint programming literature
