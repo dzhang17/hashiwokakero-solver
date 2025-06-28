@@ -69,7 +69,7 @@ statsmodels>=0.14.0
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/hashiwokakero_solver.git
+git clone https://github.com/dzhang17/hashiwokakero_solver.git
 cd hashiwokakero_solver
 ```
 
@@ -249,7 +249,7 @@ generate_all_figures(results_df)
 
 ## 📧 Contact
 
-For questions or collaboration opportunities, please open an issue or contact [your-email@example.com].
+For questions or collaboration opportunities, please open an issue or contact [zhangd17@rpi.edu].
 
 # Hashiwokakero Solver
 
